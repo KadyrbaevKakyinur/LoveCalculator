@@ -1,6 +1,5 @@
 package com.geeks.lovecalculator.ui
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,13 +37,8 @@ class LoveCalculatorFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initClickers()
 
-       // pref = requireActivity().getSharedPreferences("setting", Context.MODE_PRIVATE)
-        //val isShow: Boolean = pref.isUserSeen()
         if (!pref.isUserSeen()) {findNavController().navigate(R.id.onBoardingFragment)}
 
-
-//        if(!pref.isUserSeen()){
-//            )}
     }
 
     private fun initClickers() {

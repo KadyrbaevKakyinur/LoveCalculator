@@ -1,7 +1,5 @@
 package com.example.lovecalculator.ui
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,19 +38,9 @@ class OnBoardingFragment : Fragment() {
         binding.viewPager.adapter = adapter
         binding.indicator.setViewPager(binding.viewPager)
 
-//        sharedPreferences = requireActivity().getSharedPreferences("setting", Context.MODE_PRIVATE)
-//        val isShow: Boolean = sharedPreferences.getBoolean("Key", false)
-//        if (isShow) {
-//            findNavController().navigate(R.id.loveCalculatorFragment)
-//        }
-//        changePreference()
-
     }
 
-//    private fun changePreference() {
-//        sharedPreferences = requireActivity().getSharedPreferences("setting", Context.MODE_PRIVATE)
-//        sharedPreferences.edit().putBoolean("Key", true).apply()
-//    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
