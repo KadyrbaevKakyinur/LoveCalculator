@@ -1,5 +1,4 @@
-package com.example.lovecalculator
-
+package com.geeks.lovecalculator.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,14 +8,14 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.databinding.FragmentResultBinding
 import com.example.lovecalculator.remote.LoveModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ResultFragment : Fragment() {
 
-
-
-  private var _binding: FragmentResultBinding? = null
+    private var _binding: FragmentResultBinding? = null
     private val binding get() = _binding!!
-private var loveModel: LoveModel? = null
+    private var loveModel: LoveModel? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,16 +35,15 @@ private var loveModel: LoveModel? = null
     }
 
     private fun initClickers() {
-        with(binding){
+        with(binding) {
             btnTryAgain.setOnClickListener {
                 findNavController().navigateUp()
             }
         }
     }
 
-
     private fun initTextView() {
-        with(binding){
+        with(binding) {
             tvFistName.text = loveModel?.firstName.toString()
             tvSecondName.text = loveModel?.secondName.toString()
             tvPercentage.text = loveModel?.percentage.toString() + "%"

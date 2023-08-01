@@ -1,5 +1,6 @@
 package com.example.lovecalculator
 
+import com.example.lovecalculator.remote.LoveApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
