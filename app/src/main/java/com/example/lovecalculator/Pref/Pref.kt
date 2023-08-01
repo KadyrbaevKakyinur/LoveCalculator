@@ -1,11 +1,12 @@
 package com.example.lovecalculator.Pref
 
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 
 class Pref(context: Context){
     private var pref: SharedPreferences =
-        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        context.getSharedPreferences(PREF_NAME, MODE_PRIVATE)
 
     fun isUserSeen(): Boolean {
         return pref.getBoolean(ON_BOARDING_KEY, false)

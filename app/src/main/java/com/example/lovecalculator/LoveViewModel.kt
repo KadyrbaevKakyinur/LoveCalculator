@@ -1,6 +1,7 @@
 package com.example.lovecalculator
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.lovecalculator.remote.LoveModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,4 +13,9 @@ class LoveViewModel @Inject constructor(private val repository: Repository) : Vi
     fun getLiveData(firstName: String, secondName: String): LiveData<LoveModel> {
         return repository.getPercentage(firstName, secondName)
     }
+
+
+    fun getAll(): MutableLiveData<List<LoveModel>> = MutableLiveData(repository.getAllData())
+
+    fun getAllAlphabetically(): MutableLiveData<List<LoveModel>> = MutableLiveData(repository.getAllDataAlphabetically())
 }

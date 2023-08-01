@@ -1,7 +1,5 @@
-package com.example.lovecalculator.ui
+package com.example.lovecalculator.ui.onBoard
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.Pref.Pref
 import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentOnBoardingBinding
-import com.geeks.lovecalculator.ui.adapter.OnBoardingAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -22,8 +19,7 @@ class OnBoardingFragment : Fragment() {
     private val binding get() = _binding!!
 
     @Inject
-    lateinit var pref : Pref
-
+    lateinit var pref: Pref
 
     private val adapter = OnBoardingAdapter(this::onClick)
 
@@ -39,20 +35,7 @@ class OnBoardingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.viewPager.adapter = adapter
         binding.indicator.setViewPager(binding.viewPager)
-
-//        sharedPreferences = requireActivity().getSharedPreferences("setting", Context.MODE_PRIVATE)
-//        val isShow: Boolean = sharedPreferences.getBoolean("Key", false)
-//        if (isShow) {
-//            findNavController().navigate(R.id.loveCalculatorFragment)
-//        }
-//        changePreference()
-
     }
-
-//    private fun changePreference() {
-//        sharedPreferences = requireActivity().getSharedPreferences("setting", Context.MODE_PRIVATE)
-//        sharedPreferences.edit().putBoolean("Key", true).apply()
-//    }
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -61,6 +44,6 @@ class OnBoardingFragment : Fragment() {
 
     private fun onClick() {
         pref.saveSeen()
-        findNavController().navigate(R.id.loveCalculatorFragment)
+        findNavController().navigate(R.id.mainFragment)
     }
 }

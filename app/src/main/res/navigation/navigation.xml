@@ -3,21 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/onBoardingFragment">
+    app:startDestination="@id/mainFragment">
+
 
     <fragment
-        android:id="@+id/loveCalculatorFragment"
-        android:name="com.example.lovecalculator.LoveCalculatorFragment"
-        android:label="fragment_love_calculator"
-        tools:layout="@layout/fragment_love_calculator" />
-    <fragment
         android:id="@+id/resultFragment"
-        android:name="com.example.lovecalculator.ResultFragment"
+        android:name="com.example.lovecalculator.ui.result.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.example.lovecalculator.ui.OnBoardingFragment"
+        android:name="com.example.lovecalculator.ui.onBoard.OnBoardingFragment"
         android:label="OnBoardingFragment"
         tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.lovecalculator.ui.history.HistoryFragment"
+        android:label="HistoryFragment" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.lovecalculator.ui.main.MainFragment"
+        android:label="MainFragment" />
+    <activity
+        android:id="@+id/hilt_MainActivity"
+        android:name="com.example.lovecalculator.Hilt_MainActivity"
+        android:label="Hilt_MainActivity" />
 </navigation>
