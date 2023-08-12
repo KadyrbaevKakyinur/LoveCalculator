@@ -37,6 +37,10 @@ class OnBoardingFragment : Fragment() {
         binding.indicator.setViewPager(binding.viewPager)
     }
 
+
+
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
